@@ -130,13 +130,34 @@ function About() {
     <div className="page-container">
       <BackgroundSparkles />
       <PageHeader 
-        title="About Unicorn Commander" 
-        subtitle="Your Command Center for AI - Where Innovation Meets Magic"
+        title="About" 
+        subtitle="Where Innovation Meets Magic"
         backgroundVariant="about"
       />
       
       <main className="page-content">
         <div className="container">
+          <section className="uc-hero-section">
+            <motion.h2
+              className="section-title gradient-text"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              About Unicorn Commander
+            </motion.h2>
+            
+            <motion.div 
+              className="uc-tagline"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <h3>Your Command Center for AI</h3>
+            </motion.div>
+          </section>
+
           <motion.div 
             className="about-intro"
             initial={{ opacity: 0, y: 20 }}
@@ -329,6 +350,25 @@ function About() {
               ))}
             </div>
           </section>
+
+          {/* Product Showcase Image */}
+          <motion.div 
+            className="product-showcase"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <LazyImage 
+              src="https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              alt="UC-1 Command Center - Full Setup" 
+              className="showcase-image" 
+            />
+            <div className="showcase-caption">
+              <h3>The Complete UC-1 Experience</h3>
+              <p>A powerful AI command center that puts you in control of your digital future.</p>
+            </div>
+          </motion.div>
 
           <section className="roadmap-section">
             <motion.div

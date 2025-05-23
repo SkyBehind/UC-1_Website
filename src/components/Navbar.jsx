@@ -17,14 +17,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when a link is clicked
-  const handleLinkClick = () => {
-    if (isMenuOpen) {
-      setIsMenuOpen(false);
-    }
-    window.scrollTo(0, 0);
-  };
-
   return (
     <motion.nav 
       className={`navbar ${isScrolled ? 'scrolled' : ''}`}
@@ -35,7 +27,7 @@ export default function Navbar() {
     >
       <div className="container nav-container flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <Link to="/" className="nav-logo flex items-center" aria-label="Home" onClick={handleLinkClick}>
+          <Link to="/" className="nav-logo flex items-center" aria-label="Home">
             <motion.img 
               src={UnicornLogo}
               alt="Magic Unicorn Logo" 
@@ -58,17 +50,29 @@ export default function Navbar() {
         </button>
 
         <div className={`nav-links ${isMenuOpen ? 'active' : ''}`} aria-label="Navigation links">
-          <Link to="/" className={location.pathname === '/' ? 'active' : ''} aria-label="Home" onClick={handleLinkClick}>
+          <Link to="/" className={location.pathname === '/' ? 'active' : ''} aria-label="Home">
             Home
           </Link>
-          <Link to="/about" className={location.pathname === '/about' ? 'active' : ''} aria-label="About" onClick={handleLinkClick}>
+          <Link to="/about" className={location.pathname === '/about' ? 'active' : ''} aria-label="About">
             About
           </Link>
-          <Link to="/features" className={location.pathname === '/features' ? 'active' : ''} aria-label="Features" onClick={handleLinkClick}>
+          <Link to="/features" className={location.pathname === '/features' ? 'active' : ''} aria-label="Features">
             Features
           </Link>
-          <Link to="/specs" className={location.pathname === '/specs' ? 'active' : ''} aria-label="Specs" onClick={handleLinkClick}>
+          <Link to="/specs" className={location.pathname === '/specs' ? 'active' : ''} aria-label="Specs">
             Specs
+          </Link>
+          <Link to="/services" className={location.pathname === '/services' ? 'active' : ''} aria-label="Services">
+            Services
+          </Link>
+          <Link to="/portfolio" className={location.pathname === '/portfolio' ? 'active' : ''} aria-label="Portfolio">
+            Portfolio
+          </Link>
+          <Link to="/blog" className={location.pathname === '/blog' ? 'active' : ''} aria-label="Blog">
+            Blog
+          </Link>
+          <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''} aria-label="Contact">
+            Contact
           </Link>
         </div>
       </div>
